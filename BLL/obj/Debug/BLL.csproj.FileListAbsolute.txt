@@ -1,0 +1,33 @@
+C:\Users\Dell m6600\source\repos\Ticket Window\BLL\bin\Debug\BLL.dll
+C:\Users\Dell m6600\source\repos\Ticket Window\BLL\bin\Debug\BLL.pdb
+C:\Users\Dell m6600\source\repos\Ticket Window\BLL\bin\Debug\AutoMapper.dll
+C:\Users\Dell m6600\source\repos\Ticket Window\BLL\bin\Debug\DAL.dll
+C:\Users\Dell m6600\source\repos\Ticket Window\BLL\bin\Debug\Ninject.dll
+C:\Users\Dell m6600\source\repos\Ticket Window\BLL\bin\Debug\EntityFramework.dll
+C:\Users\Dell m6600\source\repos\Ticket Window\BLL\bin\Debug\DAL.pdb
+C:\Users\Dell m6600\source\repos\Ticket Window\BLL\bin\Debug\DAL.dll.config
+C:\Users\Dell m6600\source\repos\Ticket Window\BLL\bin\Debug\AutoMapper.pdb
+C:\Users\Dell m6600\source\repos\Ticket Window\BLL\bin\Debug\AutoMapper.xml
+C:\Users\Dell m6600\source\repos\Ticket Window\BLL\bin\Debug\Ninject.xml
+C:\Users\Dell m6600\source\repos\Ticket Window\BLL\bin\Debug\EntityFramework.xml
+C:\Users\Dell m6600\source\repos\Ticket Window\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\Dell m6600\source\repos\Ticket Window\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\Dell m6600\source\repos\Ticket Window\BLL\obj\Debug\BLL.dll
+C:\Users\Dell m6600\source\repos\Ticket Window\BLL\obj\Debug\BLL.pdb
+C:\Users\boroda\Desktop\Ticket Window\BLL\bin\Debug\BLL.dll
+C:\Users\boroda\Desktop\Ticket Window\BLL\bin\Debug\BLL.pdb
+C:\Users\boroda\Desktop\Ticket Window\BLL\bin\Debug\AutoMapper.dll
+C:\Users\boroda\Desktop\Ticket Window\BLL\bin\Debug\DAL.dll
+C:\Users\boroda\Desktop\Ticket Window\BLL\bin\Debug\Ninject.dll
+C:\Users\boroda\Desktop\Ticket Window\BLL\bin\Debug\EntityFramework.dll
+C:\Users\boroda\Desktop\Ticket Window\BLL\bin\Debug\DAL.pdb
+C:\Users\boroda\Desktop\Ticket Window\BLL\bin\Debug\DAL.dll.config
+C:\Users\boroda\Desktop\Ticket Window\BLL\bin\Debug\AutoMapper.pdb
+C:\Users\boroda\Desktop\Ticket Window\BLL\bin\Debug\AutoMapper.xml
+C:\Users\boroda\Desktop\Ticket Window\BLL\bin\Debug\Ninject.xml
+C:\Users\boroda\Desktop\Ticket Window\BLL\bin\Debug\EntityFramework.xml
+C:\Users\boroda\Desktop\Ticket Window\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\boroda\Desktop\Ticket Window\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\boroda\Desktop\Ticket Window\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\boroda\Desktop\Ticket Window\BLL\obj\Debug\BLL.dll
+C:\Users\boroda\Desktop\Ticket Window\BLL\obj\Debug\BLL.pdb

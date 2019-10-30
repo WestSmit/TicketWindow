@@ -1,0 +1,92 @@
+﻿@using MVC.Models;
+@model ResultOfSearchViewModel
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 bg-transparency-50 card-body rounded">
+            <h2>Result of Search</h2>
+            @Model.From
+            <i class="fa fa-arrow-right"></i>
+            @Model.To
+            <p>
+                @Model.Date.GetDateTimeFormats()[0]
+            </p>
+            <p>RESULTS: @Model.FoundRoutes.Count</p>
+            @foreach (var route in @Model.FoundRoutes)
+            {
+
+                <div class="card-body card bg-white">
+                    <div class="row text-black-50">
+                        <div class="col col-sm-12 col-md-6">
+                            <h4 class="text-left ">
+                                <i class="fa fa-road fa-fw"></i>
+                                @route.Name
+                            </h4>
+                        </div>
+                        <div class="text-sm-left text-md-right col-sm-12 col-md-6">
+                            <i class="fa fa-calendar-o"></i>
+                            @foreach (string day in route.Days)
+                            {
+                                <div class="d-inline">
+                                    @day
+                                    <i class="fa fa-check text-success"></i>
+                                </div>
+                            }
+                        </div>
+
+                    </div>
+                    <div class="row">
+                            <div class="col-auto col-sm-12 col-md-auto">
+                                <h4>
+                                    <i class="fa fa-map-marker"></i>
+                                    @route.StartStation
+                                    <span class="badge badge-success badge-pill">@route.StartTime.ToString("HH:mm")</span>
+                                </h4>
+                            </div>
+                            <div class="col d-none d-md-block">
+                                <hr />
+                            </div>
+                            <div class="col-auto col-sm-12 col-md-auto">
+                                <i class="fa fa-fw fa-clock-o"></i>
+                                @route.Duration
+                            </div>
+                            <div class="col d-none d-md-block">
+                                <hr />
+                            </div>
+                            <div class="col-auto col-sm-12 col-md-auto">
+                                <h4>
+                                    <i class="fa fa-map-marker"></i>
+                                    @route.FinishStation
+                                    <span class="badge badge-success badge-pill">@route.FinishTime.ToString("HH:mm")</span>
+                                </h4>
+                            </div>
+                        </div>
+                    <div>
+                         @foreach(var c in route.Carriages)
+                         {
+                        <div class="card bg-light p-2  mt-3 rounded-pill text-primary">
+                            <div class="row ">
+                                <div class="col ">
+                                    <div class="ml-2 d-inline-block align-middle">@c.Type:</div>
+                                    <div class="text-secondary d-inline-block align-bottom font-16">@c.FreePlaces Seats</div>
+
+
+                                </div>
+                                <div class="col text-center ">
+                                    <button class="btn btn-success rounded-pill m-0 pt-1 pb-1 pl-5 pr-5 d-inline-block float-none float-md-right float-lg-right">$0 Select</button>
+
+                                </div>
+                            </div>                          
+                           
+                        </div>
+                         }
+                    </div>
+                </div>
+
+                <br />
+            }
+
+        </div>
+    </div>
+</div>

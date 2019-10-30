@@ -1,0 +1,43 @@
+C:\Users\Dell m6600\source\repos\Ticket Window\DAL\bin\Debug\DAL.dll.config
+C:\Users\Dell m6600\source\repos\Ticket Window\DAL\bin\Debug\DAL.dll
+C:\Users\Dell m6600\source\repos\Ticket Window\DAL\bin\Debug\DAL.pdb
+C:\Users\Dell m6600\source\repos\Ticket Window\DAL\bin\Debug\EntityFramework.dll
+C:\Users\Dell m6600\source\repos\Ticket Window\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Dell m6600\source\repos\Ticket Window\DAL\bin\Debug\EntityFramework.xml
+C:\Users\Dell m6600\source\repos\Ticket Window\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Dell m6600\source\repos\Ticket Window\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\Dell m6600\source\repos\Ticket Window\DAL\obj\Debug\DAL.dll
+C:\Users\Dell m6600\source\repos\Ticket Window\DAL\obj\Debug\DAL.pdb
+C:\Users\Dell m6600\source\repos\Ticket Window\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\boroda\Desktop\Ticket Window\DAL\bin\Debug\DAL.dll.config
+C:\Users\boroda\Desktop\Ticket Window\DAL\bin\Debug\DAL.dll
+C:\Users\boroda\Desktop\Ticket Window\DAL\bin\Debug\DAL.pdb
+C:\Users\boroda\Desktop\Ticket Window\DAL\bin\Debug\EntityFramework.dll
+C:\Users\boroda\Desktop\Ticket Window\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\boroda\Desktop\Ticket Window\DAL\bin\Debug\EntityFramework.xml
+C:\Users\boroda\Desktop\Ticket Window\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\boroda\Desktop\Ticket Window\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\boroda\Desktop\Ticket Window\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\boroda\Desktop\Ticket Window\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\boroda\Desktop\Ticket Window\DAL\obj\Debug\DAL.dll
+C:\Users\boroda\Desktop\Ticket Window\DAL\obj\Debug\DAL.pdb
+C:\Users\boroda\Desktop\Ticket Window\DAL\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Users\boroda\Desktop\Ticket Window\DAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\boroda\Desktop\Ticket Window\DAL\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\boroda\Desktop\Ticket Window\DAL\bin\Debug\Microsoft.Owin.dll
+C:\Users\boroda\Desktop\Ticket Window\DAL\bin\Debug\Microsoft.Owin.Security.Cookies.dll
+C:\Users\boroda\Desktop\Ticket Window\DAL\bin\Debug\Microsoft.Owin.Security.dll
+C:\Users\boroda\Desktop\Ticket Window\DAL\bin\Debug\Microsoft.Owin.Security.OAuth.dll
+C:\Users\boroda\Desktop\Ticket Window\DAL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\boroda\Desktop\Ticket Window\DAL\bin\Debug\Owin.dll
+C:\Users\boroda\Desktop\Ticket Window\DAL\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Users\boroda\Desktop\Ticket Window\DAL\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\boroda\Desktop\Ticket Window\DAL\bin\Debug\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\boroda\Desktop\Ticket Window\DAL\bin\Debug\Microsoft.Owin.xml
+C:\Users\boroda\Desktop\Ticket Window\DAL\bin\Debug\Microsoft.Owin.Security.xml
+C:\Users\boroda\Desktop\Ticket Window\DAL\bin\Debug\Microsoft.Owin.Security.Cookies.xml
+C:\Users\boroda\Desktop\Ticket Window\DAL\bin\Debug\Microsoft.Owin.Security.OAuth.xml
+C:\Users\boroda\Desktop\Ticket Window\DAL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\boroda\Desktop\Ticket Window\DAL\bin\Debug\ru\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\boroda\Desktop\Ticket Window\DAL\bin\Debug\ru\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Users\boroda\Desktop\Ticket Window\DAL\bin\Debug\ru\Microsoft.AspNet.Identity.Owin.resources.dll
