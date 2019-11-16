@@ -1,0 +1,51 @@
+﻿
+@model MVC.Models.SeatSelectionViewModel
+@if (Model.SelectedSeats.Count != 0)
+{
+    <div class="text-success text-center mt-2 mb-0">
+        <i class="fa fa-2x fa-fw fa-arrow-circle-o-down"></i>
+    </div>
+    <div class="pb-0 mb-0 text-muted text-left font-weight-light">Cheack info:</div>
+    <div class="border border-success">
+        @for (int i = 0; i < Model.SelectedWagons.Count; i++)
+        {
+        <div class="border-bottom  p-1 " name="EmptyItem">
+            <div class="d-inline ml-2 mr-2" name="passenger">
+                Passenger @(i + 1)
+            </div>
+            <div class="d-inline text-muted mr-3" name="info">
+                @Model.Route.Name, wagon @Model.SelectedWagons[i], Seat @Model.SelectedSeats[i]
+            </div>
+            <div class="d-inline price m-0 p-0 ">0.0</div>
+            <div class="text-muted font-weight-light align-top d-inline align-self-end">$</div>
+
+            @using (Ajax.BeginForm("RemoveSelectedWagon", new { }, new AjaxOptions { UpdateTargetId = String.Concat("SelectWagonForm" + Model.Route.Id) }, new { name = String.Concat("ajaxForm" + Model.Route.Id), @class = "d-inline" }))
+            {
+                <input type="hidden" name="RouteId" value="@Model.Route.Id" />
+                <input type="hidden" name="index" value="@i" />
+                <input type="hidden" name="Wagons" />
+                <input type="hidden" name="Seats" />
+
+                <button type="submit" class="border-0 float-right d-inline-block close text-danger p-0" aria-label="Close">
+                    <span class="align-middle" aria-hidden="true">&times;</span>
+                </button>
+            }
+        </div>
+        }
+    </div>
+    <form method="post" action="/Home/BuyOrder/">
+        <input type="hidden" name="RouteId" value="@Model.Route.Id" />
+        <input type="hidden" name="Wagons" value="@String.Join(",", Model.SelectedWagons)"/>
+        <input type="hidden" name="Seats" value="@String.Join(",",Model.SelectedSeats)"/>
+        <button class="w-100 m-0 bg-success border-0 rounded-bottom text-white p-2">Buy</button>
+    </form>
+    
+}
+<script>
+    var Forms = document.getElementsByName("ajaxForm" +@Model.Route.Id);
+    for (var i = 0; i < Forms.length; i++) {
+        Forms[i].children.namedItem("Wagons").value = "@String.Join(",", Model.SelectedWagons)";
+        Forms[i].children.namedItem("Seats").value = "@String.Join(",", Model.SelectedSeats)";
+    }
+</script>
+

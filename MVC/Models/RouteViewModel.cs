@@ -26,6 +26,7 @@ namespace MVC.Models
         public int[] CarriagesId { get; set; }
         public List<CarriageViewModel> Carriages { get; set; }
         public string Duration { get; set; }
+        public List<IGrouping<string, CarriageViewModel>> CarriageGroups { get; set; }
 
     }
 }

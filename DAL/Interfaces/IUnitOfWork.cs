@@ -12,6 +12,7 @@ namespace DAL.Interfaces
         IRepository<Route> Routes { get; }
         IRepository<Station> Stations { get; }
         IRepository<Carriage> Carriages { get; }
+        IRepository<Ticket> Tickets { get; }
         void Save();
 
 

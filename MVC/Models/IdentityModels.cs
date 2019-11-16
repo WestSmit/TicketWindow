@@ -15,6 +15,12 @@ namespace MVC.Models
             var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
             // Здесь добавьте утверждения пользователя
 
+            var roleManager = new RoleManager<IdentityRole>(new RoleStore<IdentityRole>());
+            var RoleAdmin = new IdentityRole { Name = "admin" };
+            var RoleUser = new IdentityRole { Name = "user" };
+            roleManager.Create(RoleUser);
+            roleManager.Create(RoleAdmin);
+
             return userIdentity;
         }
     }

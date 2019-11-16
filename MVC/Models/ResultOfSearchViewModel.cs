@@ -11,6 +11,7 @@ namespace MVC.Models
         public string To { get; set; }
         public DateTime Date { get; set; }
         public List<RouteViewModel> FoundRoutes { get; set; }
+        
 
     }
 }

@@ -11,8 +11,6 @@ namespace DAL.Entities
         public string Name { get; set; }
         public string TrainName { get; set; }
         public string TrainNumber { get; set; }
-        public DateTime StartTime { get; set; }
-        public DateTime FinishTime { get; set; }
         public int DaysDuration { get; set; }
 
         [EditorBrowsable(EditorBrowsableState.Never)]
@@ -27,8 +25,7 @@ namespace DAL.Entities
             }
             set
             {
-
-                    InternalData = String.Join(";", value);
+                    InternalData = string.Join<int>(";", value);
                 
             }
         }
@@ -65,7 +62,7 @@ namespace DAL.Entities
             set
             {
 
-                InternalDataDays = String.Join(";", value);
+                InternalDataDays = string.Join(";", value);
 
             }
         }
@@ -83,7 +80,7 @@ namespace DAL.Entities
             set
             {
 
-                InternalDataCarriages = String.Join(";", value);
+                InternalDataCarriages = string.Join(";", value);
 
             }
         }

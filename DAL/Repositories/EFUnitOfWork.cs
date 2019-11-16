@@ -13,6 +13,7 @@ namespace DAL.Repositories
         private RouteRepository RouteRepository;
         private StationRepository StationRepository;
         private CarriageRepository CarriageRepository;
+        private TicketRepository TicketRepository;
         public EFUnitOfWork(string connectionString)
         {
             db = new RouteContext(connectionString);
@@ -41,6 +42,18 @@ namespace DAL.Repositories
                 return StationRepository;
             }
         }
+        public IRepository<Ticket> Tickets
+        {
+            get
+            {
+                if (TicketRepository == null)
+                {
+                    TicketRepository = new TicketRepository(db);
+                }
+                return TicketRepository;
+            }
+        }
+
         public IRepository<Carriage> Carriages
         {
             get

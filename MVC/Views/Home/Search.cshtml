@@ -3,20 +3,20 @@
 
 
 <div class="container">
-    <div class="row">
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 bg-transparency-50 card-body rounded">
-            <h2>Result of Search</h2>
+    <div class="row     ">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 bg-transparency-50 card-body text-white">
+            <h2 class="font-weight-light">Result of Search</h2>
             @Model.From
-            <i class="fa fa-arrow-right"></i>
+            <i class="fa fa-long-arrow-right"></i>
             @Model.To
             <p>
                 @Model.Date.GetDateTimeFormats()[0]
             </p>
-            <p>RESULTS: @Model.FoundRoutes.Count</p>
+            <p class="font-weight-light">RESULTS: @Model.FoundRoutes.Count</p>
             @foreach (var route in @Model.FoundRoutes)
             {
 
-                <div class="card-body card bg-white">
+                <div class="p-4 bg-white shadow rounded-0 text-dark mb-4">
                     <div class="row text-black-50">
                         <div class="col col-sm-12 col-md-6">
                             <h4 class="text-left ">
@@ -37,56 +37,112 @@
 
                     </div>
                     <div class="row">
-                            <div class="col-auto col-sm-12 col-md-auto">
-                                <h4>
-                                    <i class="fa fa-map-marker"></i>
-                                    @route.StartStation
-                                    <span class="badge badge-success badge-pill">@route.StartTime.ToString("HH:mm")</span>
-                                </h4>
-                            </div>
-                            <div class="col d-none d-md-block">
-                                <hr />
-                            </div>
-                            <div class="col-auto col-sm-12 col-md-auto">
-                                <i class="fa fa-fw fa-clock-o"></i>
-                                @route.Duration
-                            </div>
-                            <div class="col d-none d-md-block">
-                                <hr />
-                            </div>
-                            <div class="col-auto col-sm-12 col-md-auto">
-                                <h4>
-                                    <i class="fa fa-map-marker"></i>
-                                    @route.FinishStation
-                                    <span class="badge badge-success badge-pill">@route.FinishTime.ToString("HH:mm")</span>
-                                </h4>
+                        <div class="col-auto col-sm-12 col-md-auto">
+                            <h4>
+                                <i class="fa fa-map-marker"></i>
+                                @route.StartStation
+                                <span class="badge badge-success badge-pill">@route.StartTime.ToString("HH:mm")</span>
+                            </h4>
+                            <div class="text-secondary font-weight-light">
+                                @Model.Date.DayOfWeek, @Model.Date.ToString("MMMM dd", System.Globalization.CultureInfo.InvariantCulture)
                             </div>
                         </div>
-                    <div>
-                         @foreach(var c in route.Carriages)
-                         {
-                        <div class="card bg-light p-2  mt-3 rounded-pill text-primary">
-                            <div class="row ">
-                                <div class="col ">
-                                    <div class="ml-2 d-inline-block align-middle">@c.Type:</div>
-                                    <div class="text-secondary d-inline-block align-bottom font-16">@c.FreePlaces Seats</div>
+                        <div class="col d-none d-lg-block">
+                            <hr />
+                        </div>
+                        <div class="col-auto col-sm-12 col-md-auto">
+                            <i class="fa fa-fw fa-clock-o"></i>
+                            @route.Duration
+                        </div>
+                        <div class="col d-none d-lg-block">
+                            <hr />
+                        </div>
+                        <div class="col-auto col-sm-12 col-md-auto">
+                            <h4>
+                                <i class="fa fa-map-marker"></i>
+                                @route.FinishStation
+                                <span class="badge badge-success badge-pill">@route.FinishTime.ToString("HH:mm")</span>
+                            </h4>
+                            <div class="text-secondary font-weight-light text-left text-md-right">
+                                @Model.Date.AddDays(route.DaysDuration).DayOfWeek, @Model.Date.AddDays(route.DaysDuration).ToString("MMMM dd", System.Globalization.CultureInfo.InvariantCulture)
+                            </div>
+                        </div>
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-6">
+                            <h1 class="text-success font-weight-light">
+                                №@route.TrainNumber
+                            </h1>
+                            <h5 class="text-dark font-weight-light">
+                                @route.TrainName
+                            </h5>
+                            <hr />
+                            <div class="pre-scrollable overflow-auto">
+                                <table class="">
+                                    <tr class="font-weight-light">
+                                        <th class="text-secondary font-weight-light">Arrival</th>
+                                        <th class="text-secondary font-weight-light" width="100" align="center"></th>
+                                        <th class="text-secondary font-weight-light">Station</th>
+                                    </tr>
+                                    @for (int i = 0; i < route.StationsNames.Length; i++)
+                                    {
+                                        <tr>
+                                            <td class="text-success">@route.TimeOfStopPoints[i]</td>
+                                            <td> <hr class="dotted-line" /> </td>
+                                            @if (@route.StationsNames[i] == route.StartStation || @route.StationsNames[i] == route.FinishStation)
+                                            {
+                                                <td class="font-weight-bold text-success">@route.StationsNames[i]</td>
+                                            }
+                                            else
+                                            {
+                                                <td class="">@route.StationsNames[i]</td>
+                                            }
 
+                                        </tr>
+                                    }
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 border-left">
+                            <div class="pb-0 mb-0 text-muted text-left font-weight-light">Select wagon type:</div>
+                            @foreach (var c in route.CarriageGroups)
+                            {
+                                <div class="bg-light p-0 mt-1">
+                                    <div class="row m-0 p-0">
+                                        <div class="col pt-3 pb-3 pt-sm-1 pb-sm-1 pr-0 ">
+                                            <div class="d-inline-block align-middle">@c.Key:</div>
+                                            <div class="text-secondary d-inline-block align-bottom font-16">@c.Sum(x => x.FreePlaces) Seats</div>
+                                        </div>
 
+                                        <div class="col-auto">
+                                            <div class="d-inline-block align-bottom price">0.0</div>
+                                            <div class="text-muted font-weight-light align-top d-inline-block">$</div>
+                                        </div>
+                                        <div class="col-12 col-sm-auto text-center p-0 m-0">
+                                            @using (Ajax.BeginForm("SelectSeats", new AjaxOptions { UpdateTargetId = String.Concat("selectSeatsForm" + route.Id) }))
+                                            {
+                                                <input type="hidden" name="RouteId" value="@route.Id" />
+                                                <input type="hidden" name="CarriagesType" value="@c.Key" />
+                                                <button type="submit" class="btn btn-success m-0 pt-3 pb-3 pt-sm-1 pb-sm-1 pl-5 pr-5 m-0 h-100 w-100 d-inline-block rounded-0">Select</button>
+                                            }
+
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col text-center ">
-                                    <button class="btn btn-success rounded-pill m-0 pt-1 pb-1 pl-5 pr-5 d-inline-block float-none float-md-right float-lg-right">$0 Select</button>
 
-                                </div>
-                            </div>                          
+
+                            }
+                            <div class="p-0 m-0" id="@String.Concat("selectSeatsForm" + route.Id)"></div>
+
                            
                         </div>
-                         }
                     </div>
                 </div>
-
-                <br />
             }
 
         </div>
     </div>
 </div>
+@Scripts.Render("~/scripts/jquery-3.3.1.js")
+@Scripts.Render("~/scripts/jquery.unobtrusive-ajax.js")

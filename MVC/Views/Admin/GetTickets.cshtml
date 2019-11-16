@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "All Tickets";
+}
+@using MVC.Models
+@model List<TicketViewModel>
+
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 bg-white card-body">
+
+    @foreach (var ticket in Model)
+    {
+        <div class="col-12 m-2 p-2 border rounded">
+            <div>@ticket.Route.Name</div>
+            <div>Wagon @ticket.Wagon.Number - @ticket.Wagon.Type Seat @ticket.SeatNumber</div>
+
+        </div>
+    }
+</div>

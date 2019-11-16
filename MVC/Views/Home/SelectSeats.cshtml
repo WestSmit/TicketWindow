@@ -1,0 +1,46 @@
+﻿@using MVC.Models;
+@model List<CarriageViewModel>
+
+
+<div class="text-success text-center mt-2 mb-0">
+    <i class="fa fa-2x fa-fw fa-arrow-circle-o-down"></i>
+</div>
+<div class="pb-0 mb-0 text-muted text-left font-weight-light">Select wagon:</div>
+<div class="text-success bg-light rounded-top p-2 border-bottom">
+    @Model.First().Type
+</div>
+
+
+@foreach (var c in @Model)
+{
+
+    <div class="bg-white p-0 border-bottom border-left border-light">
+        <div class="row m-0 p-0">
+            <div class="col pt-3 pb-3 pt-sm-1 pb-sm-1">
+                <div class="d-inline-block align-middle border-right pr-2 border-success">№ @c.Number</div>
+                <div class="d-inline-block align-middle"> Seats: @c.FreePlaces</div>
+
+            </div>
+            <div class="col-auto">
+                <div class="d-inline-block align-bottom price">0.0</div>
+                <div class="text-muted font-weight-light align-top d-inline-block">$</div>
+            </div>
+            <div class="col-12 col-sm-auto text-center p-0 m-0">
+                @*<button type="submit" name="selectWagon" data-routeid="@c.RouteId" data-number="@c.Number" class="btn btn-success m-0 pt-3 pb-3 pt-sm-1 pb-sm-1 pl-5 pr-5 m-0 h-100 w-100 d-inline-block rounded-0">Select</button>*@
+                @using (Ajax.BeginForm("SelectWagons", new { }, new AjaxOptions { UpdateTargetId = String.Concat("SelectWagonForm" + c.RouteId ) }, new { name = String.Concat("ajaxForm" + c.RouteId) }))
+                {
+                    <input type="hidden" name="RouteId" value="@c.RouteId" />
+                    <input type="hidden" name="Number" value="@c.Number" />
+                    <input type="hidden" name="Wagons"/>
+                    <input type="hidden" name="Seats" />
+                    <button type="submit" name="operation" value="1" class="btn btn-success m-0 pt-3 pb-3 pt-sm-1 pb-sm-1 pl-5 pr-5 m-0 h-100 w-100 d-inline-block rounded-0">Select</button>
+                }
+
+            </div>
+        </div>
+    </div>
+
+
+}
+
+<div id="@String.Concat("SelectWagonForm"+Model.First().RouteId)"></div>

@@ -2,6 +2,170 @@
 @{
     ViewBag.Title = "Admin Page";
 }
+@using MVC.Models
 
-<h2>Index</h2>
+<link type="text/css" href="~/Content/Site.css" />
+<div class="container">
+    <div class="row">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 bg-white card-body rounded text-center text-md-left">
 
+
+            <h4>Add Station</h4>
+            <form method="post" action="/Admin/AddStation">
+                <div class="form-row">
+                    <div class="form-group col">
+                        <div class="autocomplete">
+                            <input autocomplete="off" type="text" class="form-control" name="NameStation" placeholder="Station name" required id="NameStationId">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-3 col-lg-2">
+                        <input type="submit" class="form-control btn btn-success" value="Add" id="btnNewStation"  />
+                    </div>
+                </div>
+            </form>
+            <label Name="Message" class="invalid-feedback d-block">@ViewBag.Message</label>
+            <hr />
+
+
+            <h4>Route creation</h4>
+            <h5 class="text-secondary">Stations:</h5>
+            <div class="row border rounded bg-light">
+                <div class="col-12 col-md-6">
+                    <div class="form-group col-12 ">
+                        <div class="autocomplete">
+                            <label class="d-block">Station Name</label>
+                            <input autocomplete="off" type="text" class="form-control" name="station" placeholder="Station name" required id="SelectedStationId" value="">
+                        </div>
+                    </div>
+                    <div class="form-group col-12">
+                        <label class="d-block">Station Time</label>
+                        <input type="time" class="form-control" name="stationTime" placeholder="Set time" required id="StationTimeId" />
+                    </div>
+
+                    <div class="form-group col-12">
+                        <input type="submit" class="form-control btn btn-primary" value="Add to Route" id="btnAddStation" disabled/>
+                       <label hidden class="text-warning" id="validLabel"></label>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <label></label>
+
+                    <div class="form-group p-2  col-12" id="StationListId" hidden>
+
+                        <div id="ListItemid" hidden>
+                            <div class="form-row border-bottom border-left">
+                                <div class="text-primary col-md-6 bg-white"><i class="fa fa-map-marker"></i> <div class="d-inline" name="name"></div> </div>
+                                <div class="col-md-4 text-center bg-white"><i class="fa fa-clock-o"></i> <div class="d-inline" name="time"></div> </div>
+                                <button type="submit" class="col-md-2 bg-danger border-0 text-center e" name="index" id="btnRemoveStation" onclick="RemoveStation()"><i class="fa fa-times text-decoration-none text-white"></i></button>
+                            </div>
+                            <div class="text-center col-md-12">
+                                <i class="fa fa-long-arrow-down text-secondary"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="EmptyStationBlockid">
+                        <div class="border rounded p-3 text-center col-12 d-none d-md-block bg-info text-white">
+                            <i class="fa fa-2x fa-arrow-circle-o-left d-block"></i>
+                            The route has no stations. Please add them using the form.
+                        </div>
+                        <div class="border rounded bg-light p-3 text-center col-12 d-md-none">
+                            <i class="fa fa-2x fa-arrow-circle-o-up d-block"></i>
+                            The route has no stations. Please add them using the form above.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <form method="post" action="/Admin/AddRoute" id="RouteForm">
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label>Route Name</label>
+                        <input type="text" class="form-control" placeholder="routeName" name="RouteName" required />
+                    </div>
+                </div>
+                <label class="d-block"> Days of Week:</label>
+                <div class="text-secondary ml-2">
+                    @Html.CheckBox("Monday", false)
+                    @Html.Label("Monday")
+                    <br />
+                    @Html.CheckBox("Tuesday", false)
+                    @Html.Label("Tuesday")
+                    <br />
+                    @Html.CheckBox("Wednesday", false)
+                    @Html.Label("Wednesday")
+                    <br />
+                    @Html.CheckBox("Thursday", false)
+                    @Html.Label("Thursday")
+                    <br />
+                    @Html.CheckBox("Friday", false)
+                    @Html.Label("Friday")
+                    <br />
+                    @Html.CheckBox("Saturday", false)
+                    @Html.Label("Saturday")
+                    <br />
+                    @Html.CheckBox("Sunday", false)
+                    @Html.Label("Sunday")
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label class="d-block">Train Name</label>
+                        <input type="text" class="form-control" placeholder="Train Name" name="trainName" required />
+                    </div>
+                    <div class="col-md-6">
+                        <label class="d-block">Train Number</label>
+                        <input type="text" class="form-control" placeholder="Train Number" name="trainNumber" required />
+                    </div>
+                </div>
+
+                <input type="hidden" name="stations" id="StationsId" />
+                <input type="hidden" name="stationsTime" id="StationsTimeId" />
+                <input type="hidden" name="carriages" id="CarriagesId" />
+                <br />
+            </form>
+            <h5 class="text-secondary">Carriages:</h5>
+            <div>
+                <label>Select type of Carriage</label>
+
+                <div class="form-row">
+                    <div class="form-group col-12 col-md-6">
+                        <select class="form-control" form="CarriageForm" name="CarriageType" id="CarriageTypeId">
+                            <option>1st class sleeper Standart</option>
+                            <option>2st class sleeper Standart</option>
+                            <option>3st class sleeper Standart</option>
+                            <option>1st class sleeper Economic</option>
+                            <option>2st class sleeper Economic</option>
+                            <option>3st class sleeper Economic</option>
+                            <option>1st class sleeper Comfortable</option>
+                            <option>2st class sleeper Comfortable</option>
+                            <option>3st class sleeper Comfortable</option>
+                            <option>Seat 1st class</option>
+                            <option>Seat 2st class</option>
+                            <option>Seat 3st class</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-12 col-md-6">
+                        <input type="submit" class="btn btn-primary" value="Add Carriage" id="btnAddCarriage" />
+                    </div>
+                </div>
+
+                <div class="border bg-light rounded">
+                    <div class="" name="CariagesItem" id="emptyItem" hidden></div>
+                </div>
+
+                <div class="border bg-light rounded p-3 text-center" id="EmptyCarriageBlockid">
+                    <i class="fa fa-2x fa-arrow-circle-o-up d-block"></i>
+                    The route has no carriages. Please add them using the form above.
+                </div>
+            </div>
+
+            <input type="submit" class="btn btn-success mt-4" value="Add Route" form="RouteForm" />
+            <hr />
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/InputAutocomplete.js"></script>
+<script src="~/Scripts/RouteCreationScript.js"></script>
+<script>
+    autocomplete("SelectedStationId", "btnAddStation", countries);
+</script>

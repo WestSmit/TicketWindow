@@ -82,6 +82,7 @@
     <Compile Include="Entities\Carriage.cs" />
     <Compile Include="Entities\Route.cs" />
     <Compile Include="Entities\Station.cs" />
+    <Compile Include="Entities\Ticket.cs" />
     <Compile Include="Interfaces\IRepository.cs" />
     <Compile Include="Interfaces\IUnitOfWork.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,6 +90,7 @@
     <Compile Include="Repositories\EFUnitOfWork.cs" />
     <Compile Include="Repositories\RouteRepository.cs" />
     <Compile Include="Repositories\StationRepository.cs" />
+    <Compile Include="Repositories\TicketRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

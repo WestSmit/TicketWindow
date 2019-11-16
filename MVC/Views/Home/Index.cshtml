@@ -6,39 +6,52 @@
 
     </div>
     <div class="row">
-        <div class="col-md-8 col-sm-12 col-lg-6 offset-lg-3 offset-md-2 card-body card">
+        <div class="col-md-8 col-sm-12 col-lg-6 offset-lg-3 offset-md-2 bg-white p-0 border-0 rounded-0">
 
-
-            <form method="post" action="/Home/Search">
-                <div class="form-group">
+            <form method="get" action="/Home/Search">
+                <div class="form-group ml-4 mt-3">
                     <div class="fa fa-fw"></div> &emsp;
                     <label class="text-success m-0">From?</label>
                     <div class="form-row">
-                        <div class="fa fa-2x fa-map-marker fa-align-center fa-fw"></div>
-                        <input type="text" class="form-control outline-none" name="FromStation" placeholder="Departure station" required>
+                        <label class="fa fa-2x fa-map-marker fa-align-center fa-fw" for="FromStationId"></label>
+                        <div class="autocomplete">
+                            <input autocomplete="off" type="text" class="form-control rounded-0" name="FromStation" placeholder="Departure station" required id="FromStationId">
+                        </div>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group ml-4">
                     <div class="fa fa-fw"></div> &emsp;
                     <label class="text-success m-0">To?</label>
                     <div class="form-row">
                         <label class="fa fa-2x fa-map-marker fa-fw" for="ToStationId"></label>
-                        <input type="text" class="form-control" name="ToStation" placeholder="Arrival station" required id="ToStationId">
+                        <div class="autocomplete">
+                            <input autocomplete="off" type="text" class="form-control rounded-0" name="ToStation" placeholder="Arrival station" required id="ToStationId">
+
+                        </div>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group ml-4">
                     <div class="fa fa-fw"></div> &emsp;
                     <label class="text-success m-0">When?</label>
                     <div class="form-row">
                         <label class="fa fa-2x fa-calendar fa-align-center fa-fw" for="DateId"></label>
-                        <input type="date" class="form-control" name="Date" value="@DateTime.Now.ToString("yyyy-MM-dd")" required min="@DateTime.Now.ToString("yyyy-MM-dd")" id="DateId">
+                        <input type="date" class="form-control rounded-0" name="Date" value="@DateTime.Now.ToString("yyyy-MM-dd")" required min="@DateTime.Now.ToString("yyyy-MM-dd")" id="DateId">
 
                     </div>
                 </div>
+                <div class="text-danger text-center">@ViewBag.ValidMessege</div>
                 <br />
-                <button type="submit" class="btn btn-success justify-content-center" value="Search"> <i class="fa fa-search"> </i> Search</button>
+
+                <button type="submit" class="btn btn-success justify-content-center w-100 m-0  rounded-0 " value="Search" id="btnSearch"> <i class="fa fa-search"> </i> Search</button>
             </form>
+            
         </div>
     </div>
 
 </div>
+
+<script src="~/Scripts/InputAutocomplete.js"></script>
+<script>
+    autocomplete("FromStationId", "btnSearch", countries);
+    autocomplete("ToStationId", "btnSearch", countries);
+</script>

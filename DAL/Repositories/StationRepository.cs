@@ -22,8 +22,8 @@ namespace DAL.Repositories
 
         public void Delete(int id)
         {
-            Route route = db.Routes.Find(id);
-            if (route != null) db.Routes.Remove(route);
+            Station station = db.Stations.Find(id);
+            if (station != null) db.Stations.Remove(station);
         }
 
         public IEnumerable<Station> Find(Func<Station, bool> predicate)

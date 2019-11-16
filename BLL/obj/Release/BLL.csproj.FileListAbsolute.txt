@@ -1,0 +1,16 @@
+C:\Users\Dell m6600\source\repos\Ticket Window\BLL\bin\Release\BLL.dll
+C:\Users\Dell m6600\source\repos\Ticket Window\BLL\bin\Release\BLL.pdb
+C:\Users\Dell m6600\source\repos\Ticket Window\BLL\bin\Release\AutoMapper.dll
+C:\Users\Dell m6600\source\repos\Ticket Window\BLL\bin\Release\DAL.dll
+C:\Users\Dell m6600\source\repos\Ticket Window\BLL\bin\Release\Ninject.dll
+C:\Users\Dell m6600\source\repos\Ticket Window\BLL\bin\Release\EntityFramework.dll
+C:\Users\Dell m6600\source\repos\Ticket Window\BLL\bin\Release\DAL.pdb
+C:\Users\Dell m6600\source\repos\Ticket Window\BLL\bin\Release\DAL.dll.config
+C:\Users\Dell m6600\source\repos\Ticket Window\BLL\bin\Release\AutoMapper.pdb
+C:\Users\Dell m6600\source\repos\Ticket Window\BLL\bin\Release\AutoMapper.xml
+C:\Users\Dell m6600\source\repos\Ticket Window\BLL\bin\Release\Ninject.xml
+C:\Users\Dell m6600\source\repos\Ticket Window\BLL\bin\Release\EntityFramework.xml
+C:\Users\Dell m6600\source\repos\Ticket Window\BLL\obj\Release\BLL.csprojAssemblyReference.cache
+C:\Users\Dell m6600\source\repos\Ticket Window\BLL\obj\Release\BLL.csproj.CopyComplete
+C:\Users\Dell m6600\source\repos\Ticket Window\BLL\obj\Release\BLL.dll
+C:\Users\Dell m6600\source\repos\Ticket Window\BLL\obj\Release\BLL.pdb

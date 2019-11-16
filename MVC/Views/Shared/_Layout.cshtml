@@ -1,9 +1,9 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>@ViewBag.Title - The National Railway</title>
     @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/fontawesome")
@@ -13,23 +13,24 @@
 <body>
     <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 ">
         <a href="/Home/Index" class="my-0 mr-md-auto text-white text-decoration-none p-0">
-            <div class="navbar-brand rounded-circle border align-middle"s>
-                <div class="fa fa-2x fa-fw fa-ticket"></div>
+            <div class="navbar-brand border align-middle p-0 rounded-circle">
+                <div class="fa fa-2x fa-fw fa-ticket p-1"></div>
             </div>
-            <h4 class="font-weight-normal text-uppercase d-inline-block m-0 align-middle">The National Railway</h4>
+            <h4 class="text-uppercase d-inline-block m-0 align-middle font-weight-normal">The National Railway</h4>
         </a>
 
         <nav class="my-2 my-md-0 mr-md-3 text-reset font-0 m-0">
             <a class="p-2 m-0 text-white font-16 text-uppercase text-decoration-none top-links" href="#">Features</a>
             <a class="p-2 m-0 text-white font-16 text-uppercase text-decoration-none top-links" href="#">Enterprise</a>
             <a class="p-2 m-0 text-white font-16 text-uppercase text-decoration-none top-links" href="#">Support</a>
-            
+
             @if (User.IsInRole("admin"))
             {
-                    <a class="p-2 m-0 text-white font-16 text-uppercase text-decoration-none top-links" href="/Admin/Index">Admin Page</a>
+                <a class="p-2 m-0 text-white font-16 text-uppercase text-decoration-none top-links" href="/Admin/Index">Admin Page</a>
+                <a class="p-2 m-0 text-white font-16 text-uppercase text-decoration-none top-links" href="/Admin/GetTickets">All Ticket</a>
             }
-        </nav> 
-        
+        </nav>
+
         @Html.Partial("_LoginPartial")
     </div>
 

@@ -1,7 +1,7 @@
 ﻿body {
     padding-top: 0;
     padding-bottom: 20px;
-    background: url("/Content/img/background.jpg") no-repeat top;
+    background: url("/Content/img/background.jpg") no-repeat top fixed;
     background-size: cover;
 }
 
@@ -24,6 +24,7 @@ select,
 textarea {
     max-width: 80%;
     outline: none;
+    margin:0;
 }
 
 input:focus {
@@ -37,7 +38,7 @@ input:focus {
 }
 
 .bg-transparency-50 {
-    background-color: rgba(255,255,255,0.6);
+    background-color: rgba(113, 113, 113, 0.5);
 }
 
 .top-links {
@@ -45,11 +46,59 @@ input:focus {
 }
 
 .top-links:hover {
-        border-bottom: 2px solid #28a745;
+    border-bottom: 2px solid #28a745;
 }
 .font-0{
     font-size: 0px;
 }
 .font-16{
     font-size: 16px;
+}
+.autocomplete {
+    position: relative;    
+    display: inline-block;
+    width:80%;
+}
+    .autocomplete input {
+        max-width:100%; 
+        margin: 0;
+    }
+
+
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    top: 100%;
+    left: 0;
+    right: 0;
+    margin: 0px;
+}
+
+    .autocomplete-items div {
+        padding: 5px;
+        cursor: pointer;
+        background-color: #fff;
+        border-bottom: 1px solid #d4d4d4;
+        margin:0px;
+    }
+
+        .autocomplete-items div:hover {
+            background-color: #e9e9e9;
+        }
+
+.autocomplete-active {
+    background-color: DodgerBlue !important;
+    color: #ffffff;
+}
+hr.dotted-line {
+    border-top: 1px dotted lightgray;
+    width: 80%;
+}
+.price{
+    font-size: 19pt;
+    font-weight:lighter;
 }
